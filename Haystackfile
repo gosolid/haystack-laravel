@@ -1,0 +1,23 @@
+{
+  "provider":{
+
+  },
+  "notes": ["Thanks for launching our stack! Visit http://haystack-laravel.local:8081"],
+  "dns": [
+    {"type": "A", "value": "haystack-laravel"}
+  ],
+  "services":{
+    "web":{
+      "image": "eboraas/laravel",
+      "ports": [{
+        "host": "8081",
+        "container": "80"
+      }],
+      "mount": {
+        "container": "/var/www/laravel/",
+        "local": "code",
+        "user" : "www-data"
+      }
+    }
+  }
+}
